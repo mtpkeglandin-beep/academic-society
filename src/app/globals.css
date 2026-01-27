@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 📱 모바일 캘린더 최적화 CSS */
+@media (max-width: 768px) {
+  /* 날짜 숫자 크기 조절 */
+  .fc .fc-daygrid-day-number {
+    font-size: 0.7rem !important;
+    padding: 4px !important;
+  }
+  
+  /* 이벤트 글자 크기 및 패딩 최소화 */
+  .fc-event {
+    font-size: 0.6rem !important;
+    padding: 1px 2px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1px !important;
+  }
+
+  /* 캘린더 헤더(월 표시) 크기 조절 */
+  .fc .fc-toolbar-title {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+  }
+
+  /* 버튼 크기 조절 */
+  .fc .fc-button {
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* 공통: 이벤트 텍스트 줄바꿈 방지 및 말줄임 처리 */
+.fc-event-title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
